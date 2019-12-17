@@ -1,0 +1,7 @@
+---
+title: "Replication Project"
+author: "enamic"
+date: "12/17/2019"
+output: html_document
+---
+I hate people

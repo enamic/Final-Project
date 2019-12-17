@@ -36,7 +36,7 @@ library(devtools)
   Biogeochemistry is the study of chemical/nutrient cycling within the water column of Marine and Freshwater ecosystems along with coastal soils. It explores physical, chemical, biological, and geological processes and reactions that govern the composition of and changes to the natural environment.
   
 <br><center>
-<img src="images/Biogeochemistry Example.png" style="border:3px solid black" width="500px"/>
+<img src="Biogeochemistry Example.png" style="border:3px solid black" width="500px"/>
 </center><br>
 
 # *Smithsonian Environmental Research Center*

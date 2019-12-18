@@ -1,0 +1,95 @@
+---
+title: "Self Evaluation"
+author: "enamic"
+date: "12/17/2019"
+output: 
+  html_document:
+    theme: cosmo
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	warning = TRUE,
+	comment = "##",
+	prompt = FALSE,
+	tidy = TRUE,
+	tidy.opts = list(width.cutoff = 75),
+	fig.path = "img/"
+)
+```
+#Overall Impression                      
+                               Me this whole semester getting hit with R...
+                       
+<br><center>
+![](https://media.giphy.com/media/PBRT37nt63i3m/giphy.gif)
+ </center><br>
+ 
+         Me, now, figuring out how to do my final project (even if I'm still missing some steps)
+         
+<br><center>
+![](https://media.giphy.com/media/1ttZSgxE69j1u/giphy.gif)
+</center><br>
+
+#What were you asked to do?
+
+Please give me a bulleted/numbered list of each task you were asked to do for this course. Where relevant, please also link the html version of the file representing each task, in your own repos, to the bulleted entry for that task.
+
+ - Set up a github account
+ - LINK EVERYTHING PROPERLY
+ - Importing data into R (via github online being the easiest imo)
+ - Learn Basic stats commands and functions
+ - Apply basic stats functions to a preset dataset
+ - Central Tendency and Variance
+ - Visualizing data (given or created) with different types of graphs; being able to visualize        things differently depending on what represents your data the best.
+ - Different types of hypothesis testing
+
+#What did you Accomplish?
+
+Please let me know how many of the above tasks you accomplished. If any of them were accomplished later than stipulated, please note that. If you contacted me about them being late (and we discussed it and I said it was ok), please note that, too. You may provide a bulleted/numbered list matching the one above.
+
+ - The only task I actually managed to accomplish fully was the final project (even with the kinks    in the figure from trying to format the data)
+     - I did however need to know how to do those tasks or use certain functions we learned in             order to do the project (or the majority of it).
+     -https://github.com/enamic/Final-Project
+     - We had spoken about me struggling to keep up with the workload because of how my schedule          was set up
+
+#How did you Accomplish them?
+
+Please let me know how well you feel you accomplished your tasks, in a general sense. What do you feel you did the best, and what did you do the least well? What was the hardest part for you? Did your work/understanding/ease improve over the course of the semester?
+
+  - I feel like I did as best a job I could with just trying to get the data to fit the original       figure. Data management was probably the biggest chuck of this project for me because there        was so much data to sift through to know what was being used for that specific figure and          then isolating ONLY the parts that I needed. Least was overall figuring out the best way to        finally organize the data I isolated because I needed specific parts of each of the variables      and it felt like each time I was taking one step forward I would realize that I can't extract      the data I need for the next step and then need to rework the dataset to make it more              manageable. I could definitely work on simplifying my code because I know for a fact there is      an easier way to turn multiple variables at a time from numeric variables into factors. I          just wish I would have been able to actually FULLY do the homework assignments because it          would made it a lot easier to know how to organzie myself and gotten feedback on easier ways       to code things that I probably did a very roundabout way. 
+  - From the beginning of the semester to now though I definitely know WAY more about how to use R 
+    and WHAT/HOW I should word what I want to look up in order to get more useful explanations         rather than just the piece of code. For me one of the biggest struggles is that I need to know     WHY I'm doing something (coding wise) in order to remember and be able to use it again in          another circumstances rather than just memorizing its funciton. But understandably that gets       hard/tricky with a language like R which is very flexible and each package is built differently     from one another depending on the function.
+    
+#How has your understanding of and approach to statistics and project design changed since taking this course? 
+
+This may be in relation to previous knowledge, or in relation to future/planned work.
+
+  - I definitely need to plan on spending a lot of time on just organzing my data regardless of        how large or small it is because it can be extremely time consuming despite knowing what you       are looking for/need.
+  - When it comes to the stats I feel like breaking down the question and/or the meaning of the        variables and data itself is extremely helpful when trying to decide what statistical              analysis you SHOULD use and what would get you the most useful results. I think the same           applies for when you are formulating an experiment and want to know what data to even collect.     Knowing what statistical tools you have at your disposal can mean the difference between useful     results and useless results.
+    
+#What did you learn from all this? 
+
+Please name at least three things you feel you learned in this course.
+
+ - I feel like I got a basic enough understanding of how R functions to be able to use it for         projects in the future along with online resources if there is some specific function I need.
+ - I learned that despite the fact that I probably SHOULD have dropped this class I'm glad that I     didn't. I might have not been the best student in the class but I'm hardheaded enough that I       just need a chance to apply myself to begin actually understanding the functionality of ***R***    because that was why I wanted to take the class in the first place. I just regret not having the    time to set aside for practicing with it everyday.
+ - Lastly I learned the difference between Bayesian and Frequentist Statistics because I found that    part of the class (stats content-wise) the most interesting.
+ 
+#How did the Peer Commentary process and Group Project relate, if at all, to what you view as your successes or difficulties in this course?
+
+ - The closest thing I came to GETTING any peer commentary was from my groupmates during the group    project. As I stated before I didn't have the chance to actively work with R to even be able to    help anyone with their code and I didn't do any myself to be able to get any feedback in return.    Also a regrettable on my part because I know from past experience with different coding            languages that everyone has a unique way of solving a problem or assembling code that being able    to see different perspectives helps you shape a better mindset for solving future problems.        You're able to attack a problem from multiple different angles and find the simplest solution      FAR more quickly.
+ 
+#What, if anything, of lasting value do you take away from this experience? If nothing, what would you do differently if you were to start over in this course?
+
+ - If I could start from the beginning I definitely wouldn't have taken this with 4 other classes     that are intro level(bc the workload is larger but its far more tedious). I wasn't able to         dedicate the time to just aquainting myself with ***R*** like I should have and that was           probably my first and biggest mistake. 
+ 
+#Taking this self-assessment into account(and with A being the highest), if you were the instructor, what grade would you give yourself given your evaluation of your own performance this semester? Please be honest.
+
+                                                 D
+ 
+ - In all honesty I would have failed myself despite the progress I made at the very end because I    didn't engage with the material throughout the course like it was intended. I started getting a    grip around the time of the group project because I NEEDED to contribute to the project and        wasn't just going to let my groupmates do the whole project on their own. I sat down and step my    step looked at what they were doing and how that translated to getting our results.
+    
+ 

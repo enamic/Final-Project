@@ -1,7 +1,7 @@
 ---
 title: "Replication Project"
 author: "enamic"
-date: "12/17/2019"
+date: "12/13/2019"
 output: 
   html_document:
     theme: cosmo
@@ -58,7 +58,7 @@ Headquartered on Chesapeake Bay, the nation’s largest estuary, SERC sits just 
   -toxic chemicals
   -global change
   
-  
+                                 -https://serc.si.edu/about-us
 # *The Paper/The Experiment*
 In Chesapeake Bay, sea levels are rising more quickly than anywhere else in the eastern U.S. Relative sea-level rise in the Chesapeake measures 3.4 millimeters per year--twice the global average (1.7 mm/yr). Wetlands are often able to combat this by raising themselves up, through soil accretion or the formation of peat. However, it's unclear how the other global change factors at work could jeopardize wetlands' ability to build elevation. In 2006, G-CREW launched its first study to measure  elevation change as a response to both carbon dioxide and nitrogen.
 
@@ -78,6 +78,7 @@ The lab of Dr. Pat Megonigal built 20 open-top chambers that each surrounded 3.4
 Each plot also contains deep-rod soil elevation tables, allowing the researchers to make sensitive measurements of elevation change in each plot.
 
 At the end of the season, they counted the individual plants to determine the abundance of the two dominant species (C3 Schoenplectus americanus and C4 Spartina patens). They also harvested some of the plants to compare the biomass of their roots belowground versus their shoots aboveground, and tracked the overall elevation change in the chambers.
+                                  -https://serc.si.edu/about-us
 
 #*Getting Started*
 ## Importing Spreadsheet data
@@ -93,7 +94,9 @@ At the end of the season, they counted the individual plants to determine the ab
 -**All places that the variable "soil" comes up is referring soil elevation data points (not able to extract)
 -Converting Treatment values to factor variable rather than numeric variable
 ```{r}
-#For the treatment values
+#For the Treatment values
+  #These were the aforementioned 4 treatments
+  # 1 =
 six_dataset$Treatment <- factor(six_dataset$Treatment, 
                   levels = c(1, 2, 3, 4),
                   labels = c("T1", "T2", "T3", "T4"))
@@ -137,13 +140,19 @@ six_eight_dataset$Year <- factor(six_eight_dataset$Year,
 head(six_eight_dataset)
 ```
 
+##Extracting Variables
+```{r}
+
+```
+
 ##Visualizing Data
 ```{r}
 # define variables from data sets
- xdata <- 
- y1 <- 
- y2 <- 
- y3 <- 
+ xdata <- six_dataset$Year
+ y1 <- six_dataset$CO2
+ y2 <- seven_dataset$CO2
+ y3 <- eight_dataset$CO2
+ y4 <- six_eight_dataset$T8
 
 # plot the first curve by calling plot() function
 # First curve is plotted
@@ -159,6 +168,10 @@ head(six_eight_dataset)
  points(xdata, y3, col="dark red",pch="+")
  lines(xdata, y3, col="dark red", lty=3)
 
+# Add Fourth curve to the same plot by calling points() and lines()
+# Use symbol 'o' for points.
+ points(xdata, y4, col="green",pch="+")
+ lines(xdata, y4, col="green", lty=3)
 ```
 
 ##The Stats

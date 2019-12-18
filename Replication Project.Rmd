@@ -168,17 +168,29 @@ head(six_eight_dataset)
  points(xdata, y3, col="dark red",pch="+")
  lines(xdata, y3, col="dark red", lty=3)
 
-# Add Fourth curve to the same plot by calling points() and lines()
-# Use symbol 'o' for points.
- points(xdata, y4, col="green",pch="+")
- lines(xdata, y4, col="green", lty=3)
 ```
 
 ##The Stats
  -This is the regular ANOVA function built into ***R***. I want to know if soil elevation values depend on CO2 concentration and N concentration so I input those values to the function. The function summary.aov() is used to summarize the analysis of variance model.
- 
 ```{r}
-res.aov2 <- aov(soil ~ CO2 + Nitrogen, data = six_eight_dataset)
+six_eight_dataset
+```
+Creating Variables
+```{r}
+#Trying to extract the soil elevation data out of the dataset to find cummulative values
+x<- 0
+z<- 0
+i<- six_eight_dataset$Year
+for (i in 2006:2006 & x<=20){
+  z = abs(abs(six_eight_dataset$T7 - six_eight_dataset$T8) - six_eight_dataset$T9)
+  x=+1
+  
+}
+z
+```
+
+```{r}
+res.aov2 <- aov( ~ CO2 + Nitrogen, data = six_eight_dataset)
 summary(res.aov2)
 ```
 

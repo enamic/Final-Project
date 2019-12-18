@@ -40,7 +40,45 @@ library(devtools)
 </center><br>
 
 # *Smithsonian Environmental Research Center*
+The Smithsonian Environmental Research Center (SERC) provides science-based knowledge to meet the environmental challenges of the 21st century. SERC leads research on coastal ecosystems—where the land meets the sea—to inform real-world decisions for wise policies, best business practices, and a sustainable planet.
+
+SERC research is urgent. The world’s coastal zones are home to more than 70 percent of the global population and experience intense economic activity. The rate of environmental change is accelerating at an alarming rate. Since its creation in 1965, SERC has been conducting peer-reviewed research to understand the causes and consequences of rapid change in Chesapeake Bay and around the world.
+
+<br><center>
+<img src="Screen Shot 2019-12-17 at 8.46.43 PM.png" style="border:3px solid black" width="500px"/>
+</center><br>
+
+Headquartered on Chesapeake Bay, the nation’s largest estuary, SERC sits just 25 miles from the nation’s capital. Its 2,650-acre campus spans forests, wetlands, marshes and 15 miles of protected shoreline. The site serves as a natural laboratory for long-term and cutting-edge ecological research. Here scientists explore the most pressing issues affecting the environment, including:
+
+  -water quality
+  -fisheries
+  -invasive species
+  -conservation
+  -land use
+  -toxic chemicals
+  -global change
+  
+  
 # *The Paper/The Experiment*
+In Chesapeake Bay, sea levels are rising more quickly than anywhere else in the eastern U.S. Relative sea-level rise in the Chesapeake measures 3.4 millimeters per year--twice the global average (1.7 mm/yr). Wetlands are often able to combat this by raising themselves up, through soil accretion or the formation of peat. However, it's unclear how the other global change factors at work could jeopardize wetlands' ability to build elevation. In 2006, G-CREW launched its first study to measure  elevation change as a response to both carbon dioxide and nitrogen.
+
+Though there is a great deal of interest in how rising CO2 and nitrogen impact ecosystems together, very few long-term field studies have manipulated both. These plots were established in 2005 to experimentally manipulate atmospheric CO2 and soil nitrogen. The greater size of plots allowed for sensitive measurement of soil surface elevation along with a keener focus on belowground processes.
+
+<br><center>
+<img src="smithsonian.png" style="border:3px solid black" width="500px"/>
+</center><br>
+
+The lab of Dr. Pat Megonigal built 20 open-top chambers that each surrounded 3.4m2 marsh plots. Inside half the chambers, they are raising carbon dioxide concentrations from 340 to 700 parts per million. But half ot the plots also receive 25 g of nitrogen per year, simulating a more polluted marsh. In total, the experiment contains four types of experimental chambered plots:
+
+  -Elevated CO2 (Elev)
+  -Ambient CO2 with increased nitrogen (Amb +N)
+  -Elevated CO2 with increaesd nitrogen (Elev +N)
+  -Control with no change (Amb)
+  
+Each plot also contains deep-rod soil elevation tables, allowing the researchers to make sensitive measurements of elevation change in each plot.
+
+At the end of the season, they counted the individual plants to determine the abundance of the two dominant species (C3 Schoenplectus americanus and C4 Spartina patens). They also harvested some of the plants to compare the biomass of their roots belowground versus their shoots aboveground, and tracked the overall elevation change in the chambers.
+
 #*Getting Started*
 ## Importing Spreadsheet data
 ```{r}
@@ -101,17 +139,26 @@ head(six_eight_dataset)
 
 ##Visualizing Data
 ```{r}
-# Data for Year
-data <- data.frame(
-  day = as.Date("2006-04-01") - 0:728,
-  value = runif(60) + seq(-280, 448)^2 / 10000
-)
+# define variables from data sets
+ xdata <- 
+ y1 <- 
+ y2 <- 
+ y3 <- 
 
-# now use actual data
-p <- ggplot(data, aes(x=six_eight_dataset$Year, y=six_eight_dataset$Treatment)) +
-  geom_line() + 
-  xlab("")
-p
+# plot the first curve by calling plot() function
+# First curve is plotted
+ plot(xdata, y1, type="o", col="blue", pch="o", lty=1, ylim=c(0,110) )
+
+# Add second curve to the same plot by calling points() and lines()
+# Use symbol '*' for points.
+ points(xdata, y2, col="red", pch="*")
+ lines(xdata, y2, col="red",lty=2)
+
+# Add Third curve to the same plot by calling points() and lines()
+# Use symbol '+' for points.
+ points(xdata, y3, col="dark red",pch="+")
+ lines(xdata, y3, col="dark red", lty=3)
+
 ```
 
 ##The Stats
@@ -148,6 +195,9 @@ group_by(Sedge_Scirpus_Density_Biomass, CO2, Nitrogen)
 
 ##Paper
   -Langley, J., Mckee, K., Cahoon, D., Cherry, J., & Megonigal, J. (2009). Elevated CO2 stimulates marsh elevation gain, counterbalancing sea-level rise. Proceedings Of The National Academy Of Sciences Of The United States Of Ame, 106(15), 6182-6186.
+
+##Smithsonian Environmental research Center Website
+  -https://serc.si.edu/about-us
 
 ##Images
 -https://www.google.com/search?q=Biogeochemistry&sxsrf=ACYBGNQDzjziua4B_imu64DK4T0DiexF2g:1576351992326&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9gqzk8LXmAhXxYN8KHTS4D1cQ_AUoA3oECBUQBQ#imgrc=3j87gA_hPZzWwM:

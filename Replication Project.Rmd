@@ -45,6 +45,111 @@ library(devtools)
 ## Importing Spreadsheet data
 ```{r}
 # All the data was in separate Spreadsheets and I couldn't put them all together because it wouldn't make senses so I took out the data for the years I needed for each and turned them all into their own sheets and the .csv
+  six_dataset <- read.csv("2006 Data.csv")
+  seven_dataset <- read.csv("2007 Data.csv")
+  eight_dataset <- read.csv("2008 Data.csv")
+  six_eight_dataset <- read.csv("2006-2008 dataset.csv")
 ```
+
+# *Two-Way Anova*
+-**All places that the variable "soil" comes up is referring soil elevation data points (not able to extract)
+-Converting Treatment values to factor variable rather than numeric variable
+```{r}
+#For the treatment values
+six_dataset$Treatment <- factor(six_dataset$Treatment, 
+                  levels = c(1, 2, 3, 4),
+                  labels = c("T1", "T2", "T3", "T4"))
+head(six_dataset)
+
+seven_dataset$Treatment <- factor(seven_dataset$Treatment, 
+                  levels = c(1, 2, 3, 4),
+                  labels = c("T1", "T2", "T3", "T4"))
+head(seven_dataset)
+
+eight_dataset$Treatment <- factor(eight_dataset$Treatment, 
+                  levels = c(1, 2, 3, 4),
+                  labels = c("T1", "T2", "T3", "T4"))
+head(eight_dataset)
+
+six_eight_dataset$Treatment <- factor(six_eight_dataset$Treatment, 
+                  levels = c(1, 2, 3, 4),
+                  labels = c("T1", "T2", "T3", "T4"))
+head(six_eight_dataset)
+
+#For the Year values
+
+six_dataset$Year <- factor(six_dataset$Year, 
+                  levels = c(2006,2007,2008),
+                  labels = c("2006", "2007", "2008"))
+head(six_dataset)
+
+seven_dataset$Year <- factor(seven_dataset$Year, 
+                  levels = c(2006,2007,2008),
+                  labels = c("2006", "2007", "2008"))
+head(seven_dataset)
+
+eight_dataset$Year <- factor(eight_dataset$Year, 
+                  levels = c(2006,2007,2008),
+                  labels = c("2006", "2007", "2008"))
+head(eight_dataset)
+
+six_eight_dataset$Year <- factor(six_eight_dataset$Year, 
+                  levels = c(2006,2007,2008),
+                  labels = c("2006", "2007", "2008"))
+head(six_eight_dataset)
+```
+
+##Visualizing Data
+```{r}
+# Data for Year
+data <- data.frame(
+  day = as.Date("2006-04-01") - 0:728,
+  value = runif(60) + seq(-280, 448)^2 / 10000
+)
+
+# now use actual data
+p <- ggplot(data, aes(x=six_eight_dataset$Year, y=six_eight_dataset$Treatment)) +
+  geom_line() + 
+  xlab("")
+p
+```
+
+##The Stats
+ -This is the regular ANOVA function built into ***R***. I want to know if soil elevation values depend on CO2 concentration and N concentration so I input those values to the function. The function summary.aov() is used to summarize the analysis of variance model.
+ 
+```{r}
+res.aov2 <- aov(soil ~ CO2 + Nitrogen, data = six_eight_dataset)
+summary(res.aov2)
+```
+
+ -Here we can see that CO2 concentration changes have a greater effect on the changes in soil elevation than changes in Nitrogen concentrations do.
+
+ -With the code below we can see if there are any interaction effects
+
+```{r}
+res.aov3 <- aov(soil ~ CO2 * Nitrogen, data = Sedge_Scirpus_Density_Biomass)
+```
+
+ -As assumed there are no interaction effects between the two variables.
+
+##Summary Stats
+ -Computing mean and standard deviation with function dplyr
+```{r}
+group_by(Sedge_Scirpus_Density_Biomass, CO2, Nitrogen)
+  summarise(
+    count = n(5),
+    mean = mean(soil, na.rm = TRUE),
+    sd = sd(soil, na.rm = TRUE)
+```
+
+#*References*
+##Data
+  -https://serc.si.edu/gcrew/nitrogendata
+
+##Paper
+  -Langley, J., Mckee, K., Cahoon, D., Cherry, J., & Megonigal, J. (2009). Elevated CO2 stimulates marsh elevation gain, counterbalancing sea-level rise. Proceedings Of The National Academy Of Sciences Of The United States Of Ame, 106(15), 6182-6186.
+
+##Images
+-https://www.google.com/search?q=Biogeochemistry&sxsrf=ACYBGNQDzjziua4B_imu64DK4T0DiexF2g:1576351992326&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9gqzk8LXmAhXxYN8KHTS4D1cQ_AUoA3oECBUQBQ#imgrc=3j87gA_hPZzWwM:
 
 
